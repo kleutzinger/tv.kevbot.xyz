@@ -2,28 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embedded Video</title>
+
     <script
       src="https://unpkg.com/htmx.org@1.9.8"
       integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr"
       crossorigin="anonymous"
     ></script>
+    <script src="/client.js"></script>
   </head>
   <body>
-    <div>
-      <button hx-get="/chess.html" hx-trigger="click" hx-swap="outerHTML">
-        Watch Chess
-      </button>
-    </div>
-    <div>
-      <button hx-get="/flash.html" hx-trigger="click" hx-swap="outerHTML">
-        Play a random flash game
-      </button>
-    </div>
-    <div>
-      <button hx-get="/youtube.html" hx-trigger="click" hx-swap="outerHTML">
-        Watch my youtube channel
-      </button>
+    <button
+      hx-get="/chess.html"
+      hx-trigger="click"
+      hx-target="#tv"
+      hx-swap="innerHTML"
+    >
+      Watch Chess
+    </button>
+    <button
+      hx-get="/flash.html"
+      hx-trigger="click"
+      hx-target="#tv"
+      hx-swap="innerHTML"
+    >
+      Play a random flash game
+    </button>
+    <button
+      hx-get="/youtube.html"
+      hx-trigger="click"
+      hx-target="#tv"
+      hx-swap="innerHTML"
+    >
+      Watch my youtube channel
+    </button>
+    <div id="tv">
+      <iframe
+        id="video"
+        src="https://www.youtube.com/embed/your-video-id"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
     </div>
   </body>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #tv {
+      width: 640px; /* Adjust the size as needed */
+      height: 480px; /* Adjust the size as needed */
+      background: url("static/tv.svg") center/cover; /* Replace 'tv_image.png' with your TV graphic */
+      position: relative;
+    }
+
+    iframe {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+    }
+  </style>
 </html>
