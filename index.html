@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.8"
+      integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div>
+      <button hx-get="/chess.html" hx-trigger="click" hx-swap="outerHTML">
+        Watch Chess
+      </button>
+    </div>
+    <div>
+      <button hx-get="/flash.html" hx-trigger="click" hx-swap="outerHTML">
+        Play a random flash game
+      </button>
+    </div>
+    <div>
+      <button hx-get="/youtube.html" hx-trigger="click" hx-swap="outerHTML">
+        Watch my youtube channel
+      </button>
+    </div>
+  </body>
+</html>
