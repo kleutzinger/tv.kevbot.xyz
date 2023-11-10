@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Embedded Video</title>
+    <title>Kevbot TV</title>
 
     <script
       src="https://unpkg.com/htmx.org@1.9.8"
@@ -13,34 +13,41 @@
     <script src="/client.js"></script>
   </head>
   <body>
-    <button
-      hx-get="/chess.html"
-      hx-trigger="click"
-      hx-target="#tv"
-      hx-swap="innerHTML"
-    >
-      Watch Chess
-    </button>
-    <button
-      hx-get="/flash.html"
-      hx-trigger="click"
-      hx-target="#tv"
-      hx-swap="innerHTML"
-    >
-      Play a random flash game
-    </button>
-    <button
-      hx-get="/youtube.html"
-      hx-trigger="click"
-      hx-target="#tv"
-      hx-swap="innerHTML"
-    >
-      Watch my youtube channel
-    </button>
+    <div class="controls">
+      <button
+        onClick="toggleFullscreen()"
+      >
+        Toggle Fullscreen
+      </button>
+      <button
+        hx-get="/chess.html"
+        hx-trigger="click"
+        hx-target="#tv"
+        hx-swap="innerHTML"
+      >
+        Watch Chess
+      </button>
+      <button
+        hx-get="/flash.html"
+        hx-trigger="click"
+        hx-target="#tv"
+        hx-swap="innerHTML"
+      >
+        Play a random flash game
+      </button>
+      <button
+        hx-get="/youtube.html"
+        hx-trigger="click"
+        hx-target="#tv"
+        hx-swap="innerHTML"
+      >
+        Watch my youtube channel
+      </button>
+    <div class="controls">
     <div id="tv">
       <iframe
         id="video"
-        src="https://www.youtube.com/embed/your-video-id"
+        src="https://www.youtube.com/embed/VzLXS1wJeFo?autoplay=1"
         frameborder="0"
         allowfullscreen
       ></iframe>
@@ -66,8 +73,24 @@
       position: absolute;
       top: 10%;
       left: 10%;
-      width: 80%;
-      height: 80%;
+      width: 400px; /* Adjust the size as needed */
+      height: 300px; /* Adjust the size as needed */
+      resize: both;
+      overflow: auto;
+    }
+
+    .full {
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      right: 0px;
+      width: 100%;
+      border: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      z-index: 999999;
+      height: 100%;
     }
   </style>
 </html>
