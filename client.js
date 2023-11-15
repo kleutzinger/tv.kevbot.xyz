@@ -19,5 +19,9 @@ setTvSize();
 function toggleFullscreen() {
   const iframe = document.getElementsByTagName("iframe")[0];
   iframe.classList.toggle("full");
+  if (iframe.src.includes("lichess")) {
+    // reload and resize chess iframe
+    iframe.src = iframe.src;
+  }
   console.log(iframe);
 }
