@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#tv {
+  width: 640px; /* Adjust the size as needed */
+  height: 480px; /* Adjust the size as needed */
+  background: url("static/tv.svg") center/cover; /* Replace 'tv_image.png' with your TV graphic */
+  position: relative;
+}
+
+iframe {
+  position: absolute;
+  top: 10%;
+  left: 18%;
+  width: 400px; /* Adjust the size as needed */
+  height: 300px; /* Adjust the size as needed */
+  resize: both;
+  overflow: auto;
+}
+
+.full {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 999999;
+  height: 100%;
+}
+
+#toggle-fullscreen-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 999999;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}

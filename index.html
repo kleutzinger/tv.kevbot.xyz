@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kevbot TV</title>
-
+    <link rel="stylesheet" href="/style.css" />
     <script
       src="https://unpkg.com/htmx.org@1.9.8"
       integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr"
@@ -14,11 +14,12 @@
   </head>
   <body>
     <div class="controls">
-      <button
+      <button id="toggle-fullscreen-button"
         onClick="toggleFullscreen()"
       >
         Toggle Fullscreen
       </button>
+      <br/>
       <button
         hx-get="/chess.html"
         hx-trigger="click"
@@ -53,46 +54,6 @@
       ></iframe>
     </div>
   </body>
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    #tv {
-      width: 640px; /* Adjust the size as needed */
-      height: 480px; /* Adjust the size as needed */
-      background: url("static/tv.svg") center/cover; /* Replace 'tv_image.png' with your TV graphic */
-      position: relative;
-    }
-
-    iframe {
-      position: absolute;
-      top: 10%;
-      left: 18%;
-      width: 400px; /* Adjust the size as needed */
-      height: 300px; /* Adjust the size as needed */
-      resize: both;
-      overflow: auto;
-    }
-
-    .full {
-      position: fixed;
-      top: 0px;
-      bottom: 0px;
-      right: 0px;
-      width: 100%;
-      border: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      z-index: 999999;
-      height: 100%;
-    }
-  </style>
   <script type="text/javascript">
       (function () {
           const cdn_script_url = 'https://cdn.jsdelivr.net/npm/kevbadge/kevbadge.js';
