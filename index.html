@@ -28,14 +28,14 @@
       >
         Watch Chess
       </button>
-      <button
-        hx-get="/flash.html"
-        hx-trigger="click"
-        hx-target="#tv"
-        hx-swap="innerHTML"
-      >
-        Play a random flash game
-      </button>
+      <!-- <button -->
+      <!--   hx-get="/flash.html" -->
+      <!--   hx-trigger="click" -->
+      <!--   hx-target="#tv" -->
+      <!--   hx-swap="innerHTML" -->
+      <!-- > -->
+      <!--   Play a random flash game -->
+      <!-- </button> -->
       <button
         hx-get="/youtube.html"
         hx-trigger="click"
@@ -53,13 +53,12 @@
         Listen to my internet radio
       </button>
     <div class="controls">
-    <div id="tv">
-      <iframe
-        id="video"
-        src="https://www.youtube.com/embed/VzLXS1wJeFo?autoplay=1"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
+    <div id="tv"
+        hx-get="/chess.html"
+        hx-trigger="load"
+        hx-target="#tv"
+        hx-swap="innerHTML"
+    >
     </div>
   </body>
   <script type="text/javascript">
